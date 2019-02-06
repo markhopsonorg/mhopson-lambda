@@ -1,0 +1,10 @@
+{
+  "name": "node",
+  "description": "Node.js example project",
+  "role": "arn:aws:iam::280159221453:role/mhopson-lambda",
+  "memory": 512,
+  "runtime": "nodejs8.10",
+  "timeout": 120,
+  "handler": "index.handler",
+  "nameTemplate": "{{.Function.Name}}"
+}
