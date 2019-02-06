@@ -1,0 +1,27 @@
+# https://circleci.com/docs/1.0/configuration/
+machine:
+  node:
+    version: 8.2.0
+
+### only need to build wishabidev and production branches
+general:
+  branches:
+    only:
+      - master
+
+dependencies:
+  pre:
+    - wget https://github.com/apex/apex/releases/download/v0.16.0/apex_linux_amd64 -O /home/ubuntu/platform-functions/apex
+    - chmod +x /home/ubuntu/platform-functions/apex
+    - ls -l /home/ubuntu/platform-functions/
+    - /home/ubuntu/platform-functions/apex
+
+test:
+  override:
+    - echo "No tests for now"
+
+deployment:
+  master:
+    branch: master
+    commands:
+      - /home/ubuntu/platform-functions/apex deploy 
