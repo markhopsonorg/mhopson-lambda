@@ -27,6 +27,7 @@ jobs:
             echo "Running one-for-all ..."
 
   deploy:
+    <<: *defaults
     steps:
       - attach_workspace:
           at: /tmp/app
