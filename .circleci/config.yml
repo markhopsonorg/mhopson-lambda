@@ -1,7 +1,9 @@
 version: 2
 defaults: &defaults
   working_directory: /tmp/app
-
+  docker:
+    - image: circleci/node:8.10
+    
 jobs:
 
   build:
