@@ -10,10 +10,16 @@ jobs:
     <<: *defaults
     steps:
       - checkout
+      - persist_to_workspace:
+          root: /tmp/app
+          paths:
+            - .
 
   one-for-all:
     <<: *defaults
     steps:
+      - attach_workspace:
+          at: /tmp/app
       - run:
           # This is universal for all project for all languages
           name: execute one-for-all
@@ -23,8 +29,11 @@ jobs:
   deploy:
     <<: *defaults
     steps:
+      - attach_workspace:
+          at: /tmp/app
       - run:
           command: |
+            apk add --update openssl
             wget https://github.com/apex/apex/releases/download/v0.16.0/apex_linux_amd64 -O ./apex
             chmod +x ./apex
             ls -l .
