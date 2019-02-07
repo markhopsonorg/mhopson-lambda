@@ -1,7 +1,7 @@
 {
   "name": "node",
   "description": "Node.js example project",
-  "role": "arn:aws:iam::280159221453:role/mhopson-lambda",
+  "role": "arn:aws:iam::280159221453:role/mhopson-lambda-role",
   "memory": 512,
   "runtime": "nodejs8.10",
   "timeout": 120,

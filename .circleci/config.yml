@@ -27,6 +27,7 @@ jobs:
       - run:
           command: |
             apk add --update openssl
+            apk add ca-certificates
             wget https://github.com/apex/apex/releases/download/v0.16.0/apex_linux_amd64 -O ./apex
             chmod +x ./apex
             ls -l .
