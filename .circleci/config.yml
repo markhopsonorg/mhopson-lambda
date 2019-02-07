@@ -31,7 +31,7 @@ jobs:
             chmod +x ./apex
             ls -l .
             ./apex
-            ./apex deploy
+            AWS_REGION=us-east-1 ./apex deploy
 
 workflows:
   version: 2
